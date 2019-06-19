@@ -1,0 +1,71 @@
+html,
+body {
+  margin: 0px;
+  padding: 0px;
+  height: 100%;
+  width: 100%;
+}
+
+.martyr {
+  height: 50%;
+  width: inherit;
+  font-size: 40px;
+  border: 1px black solid;
+}
+
+header {
+  height: 10%;
+  /* text-align: center; */
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding-left: 70px;
+  padding-right: 70px;
+  align-items: center;
+  font-family: "Lobster", cursive;
+  color: #4d636f;
+  text-shadow: 4px 3px #becbd2;
+}
+
+.gameName{
+    font-size: 45px;
+}
+
+.playerName{
+    font-size: 35px;
+}
+
+.camp {
+  height: 500px;
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+}
+
+.main {
+  width: inherit;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 90%;
+  /* margin: 0 auto; */
+}
+
+.gameBoard {
+  border: 2.5px solid grey;
+}
+
+.gamePiece {
+  margin: 0px;
+  padding: 0px;
+  height: 65px;
+  width: 75px;
+  font-size: 35px;
+  text-align: center;
+  border: 2px silver solid;
+}
+
+.gamePiece:hover {
+  font-weight: 800;
+  font-size: 40px;
+}

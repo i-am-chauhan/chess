@@ -38,28 +38,27 @@
   const createBoard = () => {
     fetch("/getGame")
       .then(res => res.json())
-      .then(({board, martyrs}) => {
+      .then(({ board, martyrs }) => {
         generateBoard(board);
       });
   };
 
-
-  const insertMartyrs = function(martyrs){
+  const insertMartyrs = function(martyrs) {
     Object.keys(martyrs).forEach(army => {
-      const grave = document.getElementById(`${army}Martyrs`)
+      const grave = document.getElementById(`${army}Martyrs`);
       grave.innerHTML = "";
       martyrs[army].forEach(symbol => {
-        grave.innerHTML += soldiers[symbol[0]]
-      })
-    })
-  }
+        grave.innerHTML += soldiers[symbol[0]];
+      });
+    });
+  };
 
   const getGame = () => {
     fetch("/getGame")
       .then(res => res.json())
-      .then(({board, martyrs}) => {
+      .then(({ board, martyrs }) => {
         formatBoard(board);
-        insertMartyrs(martyrs)
+        insertMartyrs(martyrs);
       });
   };
 
@@ -79,9 +78,8 @@
       }
     })
       .then(res => res.json())
-      .then(({moves, isSuccessfull}) => {
-        console.log(isSuccessfull, "select")
-        if(!isSuccessfull) return;
+      .then(({ moves, isSuccessfull }) => {
+        if (!isSuccessfull) return;
         moves.forEach(move => {
           let piece = document.getElementById(`${move.X}_${move.Y}`);
           piece.style.background = "rgb(127, 243, 175)";
@@ -121,6 +119,9 @@
   window.onload = () => {
     createBoard();
     polling();
+    const { playerName } = parseCookie();
+    const playerNameDiv = document.getElementById("playerName");
+    playerNameDiv.innerText = `Hi ${playerName}`;
     const board = document.getElementById("gameBoard");
     board.onclick = () => {
       selectPlayer(event);

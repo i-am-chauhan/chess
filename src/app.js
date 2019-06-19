@@ -49,6 +49,9 @@ app.get("/", (req, res) => {
 });
 
 app.use(express.static("public"));
+app.use(express.static("public/pages/"));
+app.use(express.static("public/scripts/"));
+app.use(express.static("public/stylesheets/"));
 app.get("/getGame", getGame);
 app.get("/hasStarted", hasStarted);
 
