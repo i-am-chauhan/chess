@@ -1,3 +1,3 @@
 const { app } = require("./src/app");
 
-app.listen(8090, () => console.log("listening on port 8090"));
+app.listen(8000, () => console.log("listening on port 8000"));
