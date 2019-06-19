@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <script src=""></script>
+    <link rel="stylesheet" href="hostPage.css">
+    <title>Chess Dashboard</title>
+</head>
+
+<body>
+    <header>
+        <strong>Chess</strong>
+    </header>
+    <main>
+        <form id="gameOptionsField" class="game-options-field w3-cotainer" action="/hostGame" method="POST">
+            <input class="game-options" type="text" name="playerName" placeholder="Enter Host Name" required>
+            <button type="submit">Host</button>
+        </form>
+    </main>
+</body>
+
+</html>

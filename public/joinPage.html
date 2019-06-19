@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <script src=""></script>
+    <link rel="stylesheet" href="joinPage.css">
+    <title>Chess Dashboard</title>
+</head>
+
+<body>
+    <header>
+        <strong>Chess</strong>
+    </header>
+    <main>
+        <form id="gameOptionsField" class="game-options-field w3-cotainer" action="/joinGame" method="POST">
+            <input class="game-options" type="text" name="playerName" placeholder="Enter Host Name" required>
+            <input class="game-options" type="number" name="gameId" placeholder="Enter Game Id" required>
+            <button type="submit">Join</button>
+        </form>
+    </main>
+</body>
+
+</html>
