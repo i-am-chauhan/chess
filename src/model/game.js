@@ -1,5 +1,8 @@
-class Game {
+const { ActivityLog } = require("./ActivityLog");
+
+class Game extends ActivityLog {
   constructor(firstArmy, secondArmy, board) {
+    super();
     this.firstArmy = firstArmy;
     this.secondArmy = secondArmy;
     this.board = board;
@@ -11,14 +14,20 @@ class Game {
     this.battleStarted = false;
   }
 
-  isCurrentPlayer(playerName) {
-	  return this.currentArmy.rulerName == playerName
+  getCurrPlayerName(){
+	  return this.currentArmy.rulerName;
   }
 
-  getMartyrs(){
-	  const martyrs = {};
-	  this.armies.forEach(army => martyrs[army.name] = Object.keys(army.deadSoldiers))
-	  return martyrs;
+  isCurrentPlayer(playerName) {
+    return this.currentArmy.rulerName == playerName;
+  }
+
+  getMartyrs() {
+    const martyrs = {};
+    this.armies.forEach(
+      army => (martyrs[army.name] = Object.keys(army.deadSoldiers))
+    );
+    return martyrs;
   }
 
   acceptEnemy(playerName) {

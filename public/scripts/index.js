@@ -53,11 +53,18 @@
     });
   };
 
+
+  const insertTurnNotification = function(msg){
+    const div = document.getElementById("notification");
+    div.innerText = msg;
+  }
+
   const getGame = () => {
     fetch("/getGame")
       .then(res => res.json())
-      .then(({ board, martyrs }) => {
+      .then(({ board, martyrs, turnMsg }) => {
         formatBoard(board);
+        insertTurnNotification(turnMsg)
         insertMartyrs(martyrs);
       });
   };

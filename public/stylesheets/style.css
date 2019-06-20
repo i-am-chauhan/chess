@@ -6,11 +6,18 @@ body {
   width: 100%;
 }
 
-.martyr {
+.block {
   height: 50%;
   width: inherit;
   font-size: 40px;
   border: 1px black solid;
+}
+
+.notification {
+  height: 50%;
+  width: inherit;
+  font-size: 30px;
+  /* border: 1px black solid; */
 }
 
 header {
@@ -27,12 +34,12 @@ header {
   text-shadow: 4px 3px #becbd2;
 }
 
-.gameName{
-    font-size: 45px;
+.gameName {
+  font-size: 45px;
 }
 
-.playerName{
-    font-size: 35px;
+.playerName {
+  font-size: 35px;
 }
 
 .camp {

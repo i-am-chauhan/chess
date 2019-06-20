@@ -50,12 +50,13 @@ const makeMove = (req, res) => {
 };
 
 const getGame = (req, res) => {
-  // res.type("text/event-stream");
   const game = res.app.game;
   const playerName = res.app.playerName;
   const martyrs = game.getMartyrs(playerName);
   const board = game.getBoard();
-  res.json({ board, martyrs });
+  const turnMsg = `${game.getCurrPlayerName()}'s turn`;
+
+  res.json({ board, martyrs, turnMsg });
 };
 
 const hasStarted = (req, res) => {
